@@ -1,17 +1,11 @@
-const app = {
-  init() {
-    this.stage = new createjs.Stage('game-stage');
-    this.createHello();
-    this.stage.update();
-  },
-  createHello() {
-    this.hello = new createjs.Text('Hello world', '55px Arial', '#000');
-    this.hello.textAlign = 'center';
-    this.hello.textBaseline = 'center';
-    this.hello.x = this.stage.canvas.width / 2;
-    this.hello.y = this.stage.canvas.height / 2;
-    this.stage.addChild(this.hello);
-  },
-};
+import screensManager from './managers/screensManager';
+import assetsManager from './managers/assetsManager';
 
-app.init();
+const stage = new createjs.Stage('game-stage');
+
+screensManager.init(stage);
+
+assetsManager.load(() => {
+  createjs.Sound.play('back', { loop: -1, volume: 0.3 });
+  screensManager.change('MainScreen');
+});
