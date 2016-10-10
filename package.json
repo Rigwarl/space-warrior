@@ -1,7 +1,7 @@
 {
-  "name": "html5-template",
-  "version": "0.1.1",
-  "description": "HTML5 game template",
+  "name": "space-warrior",
+  "version": "0.0.1",
+  "description": "2D html5 game",
   "license": "MIT",
   "private": true,
   "devDependencies": {
