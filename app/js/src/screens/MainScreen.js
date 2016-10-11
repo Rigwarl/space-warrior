@@ -28,8 +28,16 @@ export default class MainScreen extends createjs.Container {
 
       this.hero.rotateTower(rot);
     };
+    this.handleMouseDown = () => {
+      this.heroActions.fire = true;
+    };
+    this.handleMouseUp = () => {
+      this.heroActions.fire = false;
+    };
 
     window.addEventListener('mousemove', this.handleMouseMove);
+    window.addEventListener('mousedown', this.handleMouseDown);
+    window.addEventListener('mouseup', this.handleMouseUp);
     window.addEventListener('keydown', this.handleKeyDown);
     window.addEventListener('keyup', this.handleKeyUp);
   }
@@ -37,7 +45,13 @@ export default class MainScreen extends createjs.Container {
     this.hero = new Hero();
     this.hero.x = WORLD.WIDTH / 2;
     this.hero.y = WORLD.HEIGHT / 2;
-    this.heroActions = {};
+    this.heroActions = {
+      left: false,
+      top: false,
+      right: false,
+      down: false,
+      fire: false,
+    };
     this.addChild(this.hero);
   }
   destroy() {
@@ -45,7 +59,7 @@ export default class MainScreen extends createjs.Container {
     window.removeEventListener('keyup', this.handleKeyUp);
   }
   tick() {
-    this.hero.handleActions(this.heroActions);
+    this.hero.setActions(this.heroActions);
     this.hero.move();
   }
 }

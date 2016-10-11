@@ -6,6 +6,7 @@ const assetsManager = {
     this.queue.loadManifest([
       { id: 'tank-platform-gray', src: 'img/tank-platform-gray.png' },
       { id: 'tank-tower-gray', src: 'img/tank-tower-gray.png' },
+      { id: 'bullet', src: 'img/bullet-slim.png' },
     ]);
     this.queue.addEventListener('complete', callback);
   },

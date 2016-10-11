@@ -20,4 +20,6 @@ export const HERO_PROPS = {
   T: 0.07,
   A_ROT: 0.07,
   T_ROT: 0.07,
+
+  WEAPON_CD: 15, // ticks
 };
