@@ -14,3 +14,10 @@ export const HERO_ACTIONS = {
   39: 'right',
   40: 'down',
 };
+
+export const HERO_PROPS = {
+  A: 0.2,
+  T: 0.07,
+  A_ROT: 0.07,
+  T_ROT: 0.07,
+};
