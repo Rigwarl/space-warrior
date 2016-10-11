@@ -12,8 +12,7 @@ export default class Hero extends createjs.Container {
   }
   createTower() {
     this.tower = new createjs.Bitmap(assetsManager.getResult('tank-tower-gray'));
-    this.tower.x = -6;
-    this.tower.regX = TILE.WIDTH / 2 - 14;
+    this.tower.regX = TILE.WIDTH / 2 - 10;
     this.tower.regY = TILE.HEIGHT / 2;
     this.addChild(this.tower);
   }
