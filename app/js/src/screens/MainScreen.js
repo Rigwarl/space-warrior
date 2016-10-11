@@ -21,6 +21,13 @@ export default class MainScreen extends createjs.Container {
         this.heroActions[heroAction] = false;
       }
     };
+    this.handleMouseMove = (e) => {
+      const x = e.clientX - (this.stage.canvas.offsetLeft + this.hero.x);
+      const y = e.clientY - this.hero.y;
+      const rot = Math.atan2(y, x) * 180 / Math.PI;
+
+      this.hero.rotateTower(rot);
+    };
 
     window.addEventListener('mousemove', this.handleMouseMove);
     window.addEventListener('keydown', this.handleKeyDown);

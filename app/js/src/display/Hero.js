@@ -25,6 +25,9 @@ export default class Hero extends createjs.Container {
     this.v = 0;
     this.vRot = 0;
   }
+  rotateTower(rot) {
+    this.tower.rotation = 90 + rot;
+  }
   handleActions(actions) {
     if (actions.left) {
       this.vRot -= HERO_PROPS.A_ROT;
