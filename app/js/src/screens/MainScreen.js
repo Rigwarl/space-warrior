@@ -45,7 +45,13 @@ export default class MainScreen extends createjs.Container {
     this.hero = new Hero();
     this.hero.x = WORLD.WIDTH / 2;
     this.hero.y = WORLD.HEIGHT / 2;
-    this.heroActions = {};
+    this.heroActions = {
+      left: false,
+      top: false,
+      right: false,
+      down: false,
+      fire: false,
+    };
     this.addChild(this.hero);
   }
   destroy() {
