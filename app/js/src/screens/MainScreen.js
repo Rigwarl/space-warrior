@@ -45,7 +45,7 @@ export default class MainScreen extends createjs.Container {
     window.removeEventListener('keyup', this.handleKeyUp);
   }
   tick() {
-    this.hero.handleActions(this.heroActions);
+    this.hero.setActions(this.heroActions);
     this.hero.move();
   }
 }
