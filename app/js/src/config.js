@@ -13,7 +13,6 @@ export const HERO_ACTIONS = {
   38: 'top',
   39: 'right',
   40: 'down',
-  32: 'fire',
 };
 
 export const HERO_PROPS = {
